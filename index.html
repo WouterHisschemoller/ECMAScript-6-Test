@@ -13,6 +13,22 @@
 <body>
 	<main>
     	<h1>ECMAScript 6 test</h1>
+        <h2>Syntax</h2>
+        <h3>for..of loops</h3>
+        <p>Example shows difference between for..of and for..in loop.</p>
+        <div class="example-result" id="forof"></div>
+        <script>
+            var arr = ['one', 'two', 'three'];
+            var str = '';
+            for(var i of arr) {
+                str += i + ' ';
+            }
+            str += '<br />';
+            for(var i in arr) {
+                str += i + ' ';
+            }
+            document.getElementById('forof').innerHTML = str;
+        </script>
 	</main>
 </body>
 </html>
