@@ -54,6 +54,16 @@
             var str = `The sum of ${sum} is ${a + b}.`;
             document.getElementById('tmplstr').innerHTML = str;
         </script>
+
+        <h3>Tagged template string</h3>
+        <p>Example shows manipulation of string template by a function</p>
+        <div class="example-result" id="tagtmplstr"></div>
+        <script>
+            function tagFunction(strings, ...values) {
+                return strings[0] + ' ' + strings[1] + ' ' + strings[2] + values[0] + values[1] + values[2];
+            }
+            document.getElementById('tagtmplstr').innerHTML = tagFunction`One ${1} Two ${2} Three ${3}`;
+        </script>
 	</main>
 </body>
 </html>
