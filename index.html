@@ -6,7 +6,9 @@
     <meta name="description" content="ECMSScript 6 test.">
     <meta name="keywords" content="ecmascript 6, es6, test">
     <meta name="author" content="Wouter Hisschemöller">
-    
+    <script>
+        'use strict';
+    </script>
     <!-- css -->
     <link rel="stylesheet" href="static/css/style.css">
 </head>
@@ -15,7 +17,8 @@
     	<h1>ECMAScript 6 test</h1>
         <h2>Syntax</h2>
         <h3>for..of loops</h3>
-        <p>Example shows difference between for..of and for..in loop.</p>
+        <p>Example shows difference between for..of and for..in loop with array ['one', 'two', 'three'].</p>
+        <div class="example-code"></div>
         <div class="example-result" id="forof"></div>
         <script>
             var arr = ['one', 'two', 'three'];
@@ -28,6 +31,17 @@
                 str += i + ' ';
             }
             document.getElementById('forof').innerHTML = str;
+        </script>
+
+        <h3>octal and binary literals</h3>
+        <p>Example shows 0b11111111 and 0o77 translated to decimal.</p>
+        <div class="example-code"></div>
+        <div class="example-result" id="binoct"></div>
+        <script>
+            var binaryNr = 0b11111111;
+            var octalNr = 0o77;
+            var str = binaryNr + ' and ' + octalNr;
+            document.getElementById('binoct').innerHTML = str;
         </script>
 	</main>
 </body>
