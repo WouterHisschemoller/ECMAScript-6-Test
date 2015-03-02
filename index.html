@@ -33,7 +33,7 @@
             document.getElementById('forof').innerHTML = str;
         </script>
 
-        <h3>octal and binary literals</h3>
+        <h3>Octal and binary literals</h3>
         <p>Example shows 0b11111111 and 0o77 translated to decimal.</p>
         <div class="example-code"></div>
         <div class="example-result" id="binoct"></div>
@@ -42,6 +42,17 @@
             var octalNr = 0o77;
             var str = binaryNr + ' and ' + octalNr;
             document.getElementById('binoct').innerHTML = str;
+        </script>
+
+        <h3>Template string</h3>
+        <p>Example shows placeholders substituted by variables.</p>
+        <div class="example-result" id="tmplstr"></div>
+        <script>
+            var a = 5;
+            var b = 8;
+            var sum = 'five and eight';
+            var str = `The sum of ${sum} is ${a + b}.`;
+            document.getElementById('tmplstr').innerHTML = str;
         </script>
 	</main>
 </body>
