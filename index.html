@@ -16,6 +16,15 @@
 	<main>
     	<h1>ECMAScript 6 test</h1>
         <h2>Syntax</h2>
+        <h3>Default function parameters</h3>
+        <p>Example shows default parameter use in later default parameters: 3 + (3 * 5) = 18.</p>
+        <div class="example-result" id="deffunpar"></div>
+        <script>
+            function defPar(a = 3, b = a * 5) {
+                return a + b;
+            }
+            document.getElementById('deffunpar').innerHTML = defPar();
+        </script>
         <h3>for..of loops</h3>
         <p>Example shows difference between for..of and for..in loop with array ['one', 'two', 'three'].</p>
         <div class="example-code"></div>
