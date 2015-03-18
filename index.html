@@ -139,6 +139,56 @@ document.getElementById('tagtmplstr').innerHTML = tagFunction`One ${1} Two ${2} 
             }
             document.getElementById('tagtmplstr').innerHTML = tagFunction`One ${1} Two ${2} Three ${3}`;
         </script>
+
+        <h3>RegEx 'y' flag (sticky)</h3>
+        <p>This regular expression matches one or more non-whitespace characters from start of string up to ' line\n'<br />
+            The 'y' flag seems make the regex remember the index of the last match.<br />
+            The example shows the difference when using the 'y' flag.</p>
+        <pre><code>
+var str = '';
+var text = 'First line\nSecond line\nThird line\n';
+
+var regex = /^(\S+) line\n?/;
+var match = regex.exec(text);
+str += match + ', lastIndex: ' +  regex.lastIndex + '&lt;br /&gt;';
+var match = regex.exec(text);
+str += match + ', lastIndex: ' +  regex.lastIndex + '&lt;br /&gt;';
+var match = regex.exec(text);
+str += match + ', lastIndex: ' +  regex.lastIndex + '&lt;br /&gt;';
+str += '&lt;br /&gt;';
+var regexy = /^(\S+) line\n?/y;
+var matchy = regexy.exec(text);
+str += matchy + ', lastIndex: ' +  regexy.lastIndex + '&lt;br /&gt;';
+var matchy = regexy.exec(text);
+str += matchy + ', lastIndex: ' +  regexy.lastIndex + '&lt;br /&gt;';
+var matchy = regexy.exec(text);
+str += matchy + ', lastIndex: ' +  regexy.lastIndex + '&lt;br /&gt;';
+
+document.getElementById('regexy').innerHTML = str;
+        </code></pre>
+        <div class="example-result" id="regexy"></div>
+        <script>
+            var str = '';
+            var text = 'First line\nSecond line\nThird line\n';
+
+            var regex = /^(\S+) line\n?/;
+            var match = regex.exec(text);
+            str += match + ', lastIndex: ' +  regex.lastIndex + '<br />';
+            var match = regex.exec(text);
+            str += match + ', lastIndex: ' +  regex.lastIndex + '<br />';
+            var match = regex.exec(text);
+            str += match + ', lastIndex: ' +  regex.lastIndex + '<br />';
+            str += '<br />';
+            var regexy = /^(\S+) line\n?/y;
+            var matchy = regexy.exec(text);
+            str += matchy + ', lastIndex: ' +  regexy.lastIndex + '<br />';
+            var matchy = regexy.exec(text);
+            str += matchy + ', lastIndex: ' +  regexy.lastIndex + '<br />';
+            var matchy = regexy.exec(text);
+            str += matchy + ', lastIndex: ' +  regexy.lastIndex + '<br />';
+
+            document.getElementById('regexy').innerHTML = str;
+        </script>
 	</main>
 </body>
 </html>
